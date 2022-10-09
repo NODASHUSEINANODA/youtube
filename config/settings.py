@@ -25,7 +25,7 @@ SECRET_KEY = 'g_sdgo=xhz&1ysad=6ve$lt=xmsbp4fevl1e1y#jl+y=z1e$92'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['1e6dab9584344bf6969a3ab2c2c0be9b.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
