@@ -107,7 +107,7 @@ def model_sample(request):
 
 def message_list(request):
     messages = Message.objects.all()
-    return render(request, "comment/message_list.html", {
+    return render(request, "comment/index.html", {
         "title" : "一言掲示板",
         "messages" : messages,
     })
@@ -142,7 +142,7 @@ def message_delete(request, id):
         message.delete()
  
     # 一覧ページへリダイレクト
-    return redirect("/comment/message_list/")
+    return redirect("/comment/index/")
     
 def message_create(request):
     # フォーム送信時の処理
@@ -155,7 +155,7 @@ def message_create(request):
         # Message インスタンスを保存
         message.save()
         # 一覧ページへリダイレクト
-        return redirect("/comment/message_list/")
+        return redirect("/comment/index/")
  
     return render(request, "comment/message_create.html", {
         "title" : "新規投稿",
@@ -174,7 +174,7 @@ def message_create(request):
         # Message インスタンスを保存
         message.save()
         # 一覧ページへリダイレクト
-        return redirect("/comment/message_list/")
+        return redirect("/comment/index/")
  
     return render(request, "comment/message_create.html", {
         "title" : "新規投稿",
@@ -191,7 +191,7 @@ def message_create(request):
         message.name = form.cleaned_data.get("name")
         message.body = form.cleaned_data.get("body")
         message.save()
-        return redirect("/comment/message_list/")
+        return redirect("/comment/index/")
  
     return render(request, "comment/message_create.html", {
         "title" : "新規投稿",
@@ -211,7 +211,7 @@ def message_create(request):
         # message.save()
         form.save()
         # 一覧ページへリダイレクト
-        return redirect("/comment/message_list/")
+        return redirect("/comment/index/")
  
     return render(request, "comment/message_create.html", {
         "title" : "新規投稿",
