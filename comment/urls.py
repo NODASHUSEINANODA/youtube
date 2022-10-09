@@ -24,7 +24,7 @@ urlpatterns = [
     path("url_parameter_sample/<int:id>/comments/<int:comment_id>/", views.url_parameter_sample), # 追記
     path("show_item/<int:id>/", views.show_item), # 追記
     path("model_sample/", views.model_sample),
-    path("message_list/", views.message_list),
+    path("index/", views.message_list),
     path("message_detail/<int:id>/", views.message_detail),
     path("message_delete/<int:id>/", views.message_delete),
     path("message_create/", views.message_create),
