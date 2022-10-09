@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    {# ここはテンプレートのコメントです。出力時には無視されます。 #}
+    <!-- HTMLのコメントは普通に出力されます。 -->
+    {% if num > 5 %}
+        <p>5より大きいです。</p>
+    {% endif %}
+ 
+    {% if num > 15 %}
+        <p>15より大きいです。</p>
+    {% elif num > 5 %}
+        <p>5より大きく15以下です。</p>
+    {% else %}
+        <p>5以下です。</p>
+    {% endif %}
+ 
+    <ul>
+        {% for name in names %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "layouts/default.html" %}
+ 
+{% block title %}{{ title }}{% endblock %}
+ 
+{% block content %}
+    {% include "includes/logged_in_header.html" %}
+    <h1>{{ title }}</h1>
+    <dl>
+        <dt>お名前</dt>
+        <dd>{{ message.name }}</dd>
+        <dt>本文</dt>
+        <dd>{{ message.body }}</dd>
+        <dt>投稿日時</dt>
+        <dd>{{ message.created_at }}</dd>
+    </dl>
+    <p>
+        <a href="/comment/message_update/{{ message.id }}/">
+            編集
+        </a>
+        <form action="/comment/message_delete/{{ message.id }}/" method="post">
+            {% csrf_token %}
+            <button type="submit">削除</button>
+        </form>
+    </p>
+{% endblock %}

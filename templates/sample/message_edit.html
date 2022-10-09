@@ -1,0 +1,26 @@
+{% extends "layouts/default.html" %}
+ 
+{% block title %}{{ title }}{% endblock %}
+ 
+{% block content %}
+{% include "includes/logged_in_header.html" %}
+    <h1>{{ title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label>
+                名前:
+                <input type="text" name="name" placeholder="お名前を入力">
+            </label>
+        </div>
+        <div>
+            <label>
+                コメント：
+                <input type="text" name="body" placeholder="コメントを入力">
+            </label>
+        </div>
+        <div>
+            <input type="submit" value="投稿">
+        </div>
+    </form>
+{% endblock %}

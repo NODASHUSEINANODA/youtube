@@ -1,0 +1,22 @@
+{% extends "layouts/default.html" %}
+ 
+{% block title %}{{ title }}{% endblock %}
+ 
+{% block content %}
+    {% include "includes/logged_in_header.html" %}
+    <h1>{{ title }}</h1>
+    <p>
+        <a href="/sample/message_create/">新規投稿</a>
+    </p>
+    <ul>
+        {% for message in messages %}
+            <li>
+                <a href="/sample/message_detail/{{ message.id }}">
+                    {{ message.name }}: {{ message.body }} {{ message.created_at }}
+                </a>
+            </li>
+        {% empty %}
+            <li>メッセージはありません。</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

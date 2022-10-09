@@ -1,0 +1,39 @@
+{% extends "layouts/default.html" %}
+ 
+{% block title %}{{ title }}{% endblock %}
+ 
+{% block content %}
+    <h1>{{ title }}</h1>
+    <h2>送信内容を表示</h2>
+    <p>リクエストメソッド: {{ request_method }}</p>
+    <h3>GET で送信された値:</h3>
+ 
+    {% for key,value in get_values.items %}
+        <div><b>{{key}}: </b>{{ value }}</div>
+    {% empty %}
+        <div>なし</div>
+    {% endfor %}
+    <h3>POST で送信された値:</h3>
+    {% for key,value in post_values.items %}
+        <div><b>{{key}}: </b>{{ value }}</div>
+    {% empty %}
+        <div>なし</div>
+    {% endfor %}
+ 
+    <h2>↓以下の各方法で送信してみましょう↓</h2>
+    <p>
+        x=abc、y=defを送信:
+        <a href="/sample/get_post_sample/?x=abc&y=def">リンクで送信</a>
+    </p>
+    <form action="/sample/get_post_sample/">
+        リクエストメソッド:GET で値を送信する
+        <input type="text" name="get_value" value="GETで送信する値">
+        <input type="submit" value="getで送信">
+    </form>
+    <form method="post" action="/sample/get_post_sample/">
+        {% csrf_token %}
+        リクエストメソッド:POST で値を送信する
+        <input type="text" name="post_value" value="POSTで送信する値">
+        <input type="submit" value="postで送信">
+    </form>
+{% endblock %}

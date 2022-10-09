@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>{{ description | safe }}</p>
+    <h2>{{ subtitle }}</h1>
+    <ul>
+        {% for point in points %}
+            <li>{{ point }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
