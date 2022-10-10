@@ -25,7 +25,7 @@ SECRET_KEY = 'g_sdgo=xhz&1ysad=6ve$lt=xmsbp4fevl1e1y#jl+y=z1e$92'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [''localhost', '.pythonanywhere.com', '{NODASHUSEINANODA}.pythonanywhere.com'']
+ALLOWED_HOSTS = [''localhost', '.pythonanywhere.com', 'NODASHUSEINANODA.pythonanywhere.com'']
 
 
 # Application definition
